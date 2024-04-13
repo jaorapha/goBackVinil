@@ -10,7 +10,11 @@ class Client extends Model
 {
     use HasFactory;
 
-    public  function discs(): BelongsToMany{
+    public function getClients(){
+      return $this->all();
+    }   
+
+    public function discs(): BelongsToMany{
       return $this->belongsToMany(Disc::class);
     } 
 }
